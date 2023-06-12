@@ -7,7 +7,7 @@ import argparse
 parser = argparse.ArgumentParser(description='EsZSL')
 parser.add_argument('--dataset', type=str, default='CUB',
 					help='Name of the dataset')
-parser.add_argument('--dataset_path', type=str, default='xlsa17/data/',
+parser.add_argument('--dataset_path', type=str, default='ESZSL/Data/xlsa17/data/',
 					help='Name of the dataset')
 parser.add_argument('--alpha', type=int, default=2,
 					help='value of hyper-parameter')
@@ -18,6 +18,8 @@ parser.add_argument('--gamma', type=int, default=2,
 
 
 class EsZSL():
+	current_directory = os.getcwd()
+	print(f"Current working directory: {current_directory}")
 	"""docstring for ClassName"""
 	def __init__(self, args):
 		res101 = scipy.io.loadmat(args.dataset_path+args.dataset+'/res101.mat')
